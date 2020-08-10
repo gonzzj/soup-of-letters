@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './scss/style.scss';
+import Board from './components/board';
+import Stats from './components/stats';
+import Games from './components/games';
+import soups from './mocks/soups.json';
+import { searchMatrixWord } from './utils/utils';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+	const SEARCH_WORD: string = "OIE";
+	const [game, setGame] = useState(0);
+
+    return (
+		<div className={"container mt-5"}>
+			<div className={"columns"}>
+				<div className={"column"}>
+					<Games soups={soups.resources} setGame={setGame} game={game} />
+				</div>
+			</div>
+			<div className={"columns"}>
+            	<div className={"column is-8"}>
+					<Board soup={soups.resources[game]}/>
+				</div>
+				<div className={"column is-4"}>
+					<Stats cantWords={searchMatrixWord(soups.resources[game], SEARCH_WORD)} wordToFound={SEARCH_WORD} />
+				</div>
+			</div>
+		</div>
+    );
 }
 
 export default App;

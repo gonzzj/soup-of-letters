@@ -30,7 +30,7 @@ const App = () => {
 						<Board soup={games[game]}/>
 					</div>
 					<div className={"column is-4"}>
-						<Stats cantWords={searchMatrixWord(games[game], SEARCH_WORD)} wordToFound={SEARCH_WORD} />
+						<Stats cantWords={searchMatrixWord(games[game], SEARCH_WORD)} wordToFind={SEARCH_WORD} />
 					</div>
 				</div>
 			}

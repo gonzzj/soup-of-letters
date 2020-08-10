@@ -1,0 +1,5 @@
+{
+	"app_name": "soup-of-letters",
+	"port": 3001,
+	"basePathApi": ""
+}

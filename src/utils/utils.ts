@@ -1,9 +1,10 @@
-
 /**
  * Search a word on a matrix (soup of letter) and return the amount of time the word repeat in there.
  * 
  * @param matrix - Array<Array<string>>
  * @param wordToFound - string
+ * 
+ * @returns number
  */
 export const searchMatrixWord = (matrix: Array<Array<string>>, wordToFound: string): number => {
     let cantWords: number = 0;
@@ -58,7 +59,9 @@ export const searchMatrixWord = (matrix: Array<Array<string>>, wordToFound: stri
  * @param matrix - Array<Array<string>>
  * @param x - number
  * @param y - number
+ * 
+ * @returns boolean
  */
-const letterExists = (matrix: Array<Array<string>>, x: number, y: number) => {
+const letterExists = (matrix: Array<Array<string>>, x: number, y: number): boolean => {
     return typeof matrix[x] !== 'undefined' && typeof matrix[x][y] !== 'undefined';
 };
